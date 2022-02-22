@@ -6,7 +6,7 @@
 	color: #434;
 }
 body{
-background: #eee;	
+background: #eee;
 }
 body > #header{
 	padding: 20px;
@@ -110,8 +110,25 @@ padding: 32px 20px;
 	margin: 0 2px;
 	background: #444b;
 }
-.aberta{color: #3e3e;}
-.finalizada{color: orange;}
+
+td span{
+	background: #ccc;
+	padding: 6px 16px;
+	border-radius: 20px;
+	box-shadow: 2px 2px 5px #aaa;
+	color: #888;
+}
+td.processando span{
+	background: #33ee;
+	color: white;
+}
+td.aberta span{
+	background: #3e3e;
+}
+td.finalizada span{
+	background: orange;
+	color: white;
+}
 
 /* ESPAÇAMENTOS  */
 .top-5{
@@ -172,4 +189,26 @@ footer i{
   color: #288;
   font-size: 23px;
   font-weight: normal;
+}
+.editar, .remove{
+	background: #e44;
+	padding: 10px;
+	color: white!important;
+	border-radius: 3px;
+	box-shadow: 1px 1px 8px #888;
+}
+.editar{
+	background: #44E;
+}
+@media screen and (max-width: 780px) {
+	.editar, .remove{
+		display: block;
+		margin-bottom: 4px;
+	}
+	td span{
+		display: block;
+		text-align: center;
+		border-radius: 3px;
+		padding: 10px;
+	}
 }

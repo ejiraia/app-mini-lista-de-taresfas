@@ -84,7 +84,7 @@ $porPagina = 3;
 			<select name="status">
 				<option>aberta</option>
 				<option>em pausa</option>
-				<option>aguardando...</option>
+				<option>processando</option>
 				<option>finalizada</option>
 			</select>
 			<button type="submit" name="acao">Salvar</button>
@@ -98,8 +98,7 @@ $porPagina = 3;
 					<th width="40%">Tarefa</th>
 					<th>Autor</th>
 					<th>Status</th>
-					<th>Editar</th>
-					<th>Excluir</th>
+					<th style="text-align: center;">Ações</th>
 				</tr>
 				<?php
 					$tarefas = Core::selectDesc('*','tb_tarefas','true',($paginaAtual-1)*$porPagina,$porPagina);
@@ -109,9 +108,11 @@ $porPagina = 3;
 					<td>#<?php echo $value['id']; ?></td>
 					<td><?php echo $value['tarefa']; ?></td>
 					<td><?php echo $value['autor']; ?></td>
-					<td <?php echo 'class='.$value['status']; ?>><?php echo $value['status']; ?></td>
-					<td><a class="editar" href="editar-tarefa.php?id=<?php echo $value['id']; ?>&status=<?php echo $value['status']; ?>">Editar</a></td>
-					<td><a class="remove" href="index.php?excluir=<?php echo $value['id']; ?>">Excluir</a></td>
+					<td <?php echo 'class='.$value['status']; ?>><span><?php echo $value['status']; ?></span></td>
+					<td style="text-align: center;">
+						<a class="editar" href="editar-tarefa.php?id=<?php echo $value['id']; ?>&status=<?php echo $value['status']; ?>">Editar</a>
+						<a class="remove" href="index.php?excluir=<?php echo $value['id']; ?>">Excluir</a>
+					</td>
 				</tr>
 				<?php }//fim do foreach ?>
 			</table>

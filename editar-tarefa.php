@@ -50,7 +50,7 @@
 			<select name="status">
 				<option <?php selecionado('aberta')?> >aberta</option>
 				<option <?php selecionado('em pausa')?>>em pausa</option>
-				<option <?php selecionado('aguardando...')?>>aguardando...</option>
+				<option <?php selecionado('processando')?>>processando</option>
 				<option <?php selecionado('finalizada')?>>finalizada</option>
 			</select>
 			<button type="submit" name="acao">Salvar</button>
